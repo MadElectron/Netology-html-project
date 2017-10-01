@@ -1,0 +1,84 @@
+$monts-bold: "Montserrat Bold", Arial, sans-serif;
+$monts-reg: "Montserrat Regular", Arial, sans-serif;
+
+$melon: #fce38a;
+
+@mixin stick-top {
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+// ========== Plain styles ===========
+
+@font-face {
+  font-family: "Montserrat Bold";
+  font-weight: bold;
+  src: url("fonts/Montserrat-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Montserrat Regular";
+  font-weight: normal;
+  src: url("fonts/Montserrat-Regular.ttf") format("truetype");
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 1920px;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+/* header */
+
+header {
+  position: absolute;
+  height: 1000px;
+
+  @include stick-top;
+
+  background-image: url("images/back.jpg");
+  background-size: cover;
+  color: #ffffff;
+}
+
+nav {
+  height: 64px;
+
+  .logo {
+    display: inline-block;
+    position: relative;
+    top: 28px;
+    margin-left: 2px;
+    font-family: $monts-bold;
+    font-size: 30px;
+  }
+
+  .nav-bar {
+    display: inline-block;
+    position: relative;
+    float: right;
+  }
+
+  .nav-btn {
+    display: inline-block;
+    width: 100px;
+    padding: 39px 55px 12px;
+    font-family: $monts-reg;
+    font-size: 14;
+    text-transform: uppercase;
+
+    &:hover {
+      border-bottom: 3px solid $melon;
+      color: $melon;
+      cursor: pointer;
+    }
+  }
+}
