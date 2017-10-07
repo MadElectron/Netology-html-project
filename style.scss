@@ -59,19 +59,14 @@ body {
 }
 
 h3, h4 {
-  // margin: 0 0 13px;
   font-family: $monts-reg;
-  line-height: 15px;
   text-transform: uppercase;
   color: #333333;
 }
 
 h3 {
   font-size: 14px;
-}
-
-h4 {
-  font-size: 12px;
+  line-height: 15px;
 }
 
 p {
@@ -102,7 +97,7 @@ p {
 }
 
 .title {
-  margin: 23px 0 41px;
+  margin-top: 23px;
   font-family: $monts-bold;
   font-size: 30px;
   line-height: 24px;
@@ -290,7 +285,7 @@ nav{
 
   .nav-btn {
     display: inline-block;
-    padding: 39px 55px 12px 0;
+    padding: 32px 55px 12px 0;
     font-family: $monts-reg;
     font-size: 14px;
     line-height: 14px;
@@ -310,7 +305,7 @@ nav{
         width: 100%;
         max-width: 62px;
         height: 3px;
-        margin: 12px auto 0;
+        margin: 10px auto 0;
         background-color: $melon;
       }
     }
@@ -430,13 +425,17 @@ header {
 .info{
   padding: 91px 0 110px;
 
+  .title {
+    margin-bottom: 38px;
+  }
+
   .tiny-hr{
     background-color: $coral;
   }
 
   &-content {
     height: 130px;
-    margin: 47px auto 10px;
+    margin: 42px auto 15px;
 
     p {
       margin: 0 120px;
@@ -493,7 +492,7 @@ header {
     }
 
     h1 {
-      margin: 0 0 29px;
+      margin: 0 0 25px;
       font-family: $monts-bold;
       font-size: 72px;
       line-height: 52px;
@@ -511,10 +510,10 @@ header {
 
 /* Services */
 .services {
-  padding: 109px 0 65px;
+  padding-top: 109px;
 
-  hr {
-    color: #999999;
+  .title {
+    margin-bottom: 43px;
   }
 
   .tiny-hr{
@@ -522,12 +521,12 @@ header {
   }
 
   &-grid {
-    margin: 18px 0 40px;
+    margin: 18px 0 35px;
   }
 
   .service {
     width: 33%;
-    padding: 42px 0 38px;
+    padding: 45px 0 35px;
 
     .icon {
       background-image: url('images/icons-nav.png');
@@ -545,6 +544,10 @@ header {
     &-content {
       width: calc(100% - 90px);
 
+      h3 {
+        margin-top: 0;
+      }
+
     }
   }
 }
@@ -553,17 +556,23 @@ header {
 
 footer {
   position: relative;
+  padding-top: 64px;
   bottom: 0;
   background-color: #f8f8f8;
 
   h3 {
-    margin-bottom: 40px;
+    margin-bottom: 38px;
   }
 
   .footer {
     
     &-content {
       padding: 69px 0 69px 0;
+    }
+    
+    &-small {
+      font-family: $robo-it;
+      color: #333333;
     }
 
     &-social {
@@ -579,13 +588,14 @@ footer {
       }
 
       .logo {
-        margin-bottom: 43px;
+        margin-bottom: 35px;
         font-size: 46px;
         line-height: 46px;
         color: #cccccc;
       }
 
       .followers-counter {
+        padding: 30px 0 11px;
         border-bottom: 1px solid $gray;
         font-family: $monts-reg;
         font-size: 14px;
@@ -598,25 +608,28 @@ footer {
         }
       }
 
-      .social-icons {
-        font-family: $robo-it;
-        font-style: italic;
-        
-        p {
-          line-height: 0.9em;
-        }
+      .social {
+        &-icons {
+          font-family: $robo-it;
+          font-style: italic;
+          
+          .icon {
+            margin-right: 8px;
+            background-image: url('images/icons-social.png');
+            width: 18px;
+            height: 16px;
 
-        .icon {
-          margin-right: 9px;
-          background-image: url('images/icons-social.png');
-          width: 18px;
-          height: 16px;
-
-          &:first-child {
-            margin-left: 25px;
+            &:first-child {
+              margin-left: 18px;
+            }
           }
         }
+
+        &-form {
+          margin-top: 28px;
+        }
       }
+
 
     }
 
@@ -625,8 +638,14 @@ footer {
 
 
       .blog {
-        padding: 0 0 40px;
+        padding: 0 0 28px;
         
+        h4 {
+          margin-bottom: 4px;
+          font-size: 12px;
+          line-height: 16px;
+        }
+
         &-img {
           width: 119px;
         }
@@ -637,9 +656,9 @@ footer {
         }
 
         &-date {
+          margin: 0;
           font-size: 13px;
           font-style: italic;
-          line-height: 24px;
         }
       }
 
