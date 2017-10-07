@@ -3,8 +3,10 @@
 $monts-bold: "Montserrat Bold", Arial, sans-serif;
 $monts-reg: "Montserrat Regular", Arial, sans-serif;
 $monts-reg: "Montserrat Regular", Arial, sans-serif;
-$kaushan: "KaushanScript-Regular", cursive;
+$kaushan: "KaushanScript Regular", cursive;
 $robo-reg: "Roboto Regular", Arial, sans-serif;
+$robo-it: "Roboto Light Italic", Arial, sans-serif;
+
 
 // ==== Colors ====
 
@@ -12,6 +14,7 @@ $melon: #fce38a;
 $blind-melon: #f6eac5;
 $coral: #f38181;
 $marine: #95e1d3;
+$gray: #e5e5e5;
 
 // ==== Plain styles ====
 
@@ -28,16 +31,23 @@ $marine: #95e1d3;
 }
 
 @font-face {
-  font-family: "KaushanScript-Regular";
+  font-family: "KaushanScript Regular";
   font-weight: normal;
   src: url("fonts/KaushanScript-Regular.ttf") format("truetype");
 }
 
 @font-face {
-  font-family: "Roboto-Regular";
+  font-family: "Roboto Regular";
   font-weight: normal;
   src: url("fonts/Roboto-Regular.ttf") format("truetype");
 }
+
+@font-face {
+  font-family: "Roboto Light Italic";
+  font-weight: normal;
+  src: url("fonts/Roboto-LightItalic.ttf") format("truetype");
+}
+
 
 * {
   box-sizing: border-box;
@@ -48,16 +58,69 @@ body {
   margin: 0;
 }
 
+h3, h4 {
+  // margin: 0 0 13px;
+  font-family: $monts-reg;
+  line-height: 15px;
+  text-transform: uppercase;
+  color: #333333;
+}
+
+h3 {
+  font-size: 14px;
+}
+
+h4 {
+  font-size: 12px;
+}
+
+p {
+  margin-bottom: 9px;
+  font-family: $robo-reg;
+  font-size: 15px;
+  line-height: 24px;
+  color: #999999;
+}
+
 .container {
+  position: relative;
+  height: 100%;
   width: 1200px;
   margin: 0 auto;
-  outline: 1px solid red;
+  // outline: 1px solid red;
 }
+
+
+.subtitle {
+  margin: 0;
+  font-family: $kaushan;
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 22px;
+  text-align: center;
+  color: #333333;
+}
+
+.title {
+  margin: 23px 0 41px;
+  font-family: $monts-bold;
+  font-size: 30px;
+  line-height: 24px;
+  text-align: center;
+  text-transform: uppercase;
+} 
 
 .tiny-hr {
   width: 60px;
   height: 3px;
   margin: 0 auto;  
+}
+
+
+.logo {
+  font-family: $monts-bold;
+  font-size: 30px;
+  line-height: 30px;
 }
 
 /* Grid model */
@@ -89,14 +152,114 @@ body {
 }
 
 /* Icons */
-.icon-cart {
-  background-position-x: 0;
+.icon {
+  display: inline-block;
+
+  &-cart {
+    background-position-x: 0;
+  }
+
+  &-magnifier {
+    background-position-x: 20px;
+  }
+
+  &-alarm {
+    background-position-x: 0;
+  }
+
+  &-graph {
+    background-position-x: -40px;
+  }
+
+  &-comp-ok {
+    background-position-x: -80px;
+  }
+
+  &-book {
+    background-position-x: -120px;
+  }
+
+  &-home {
+    background-position-x: -160px;
+  }
+
+  &-digital {
+    background-position-x: -195px;
+  }
+
+  &-fb {
+    background-position-x: 0;
+  }
+
+  &-twitter {
+    background-position-x: -25px;
+  }
+
+  &-instagram {
+    background-position-x: -55px;
+  }
+
+  &-pintrest {
+    background-position-x: -85px;
+  }
+
+  &-google-plus {
+    background-position-x: -115px;
+  }
+
+  &-youtube {
+    background-position-x: -145px;
+  }
+
+  &-dribble {
+    background-position-x: -175px;
+  }
+
+  &-tumblr {
+    background-position-x: -205px;
+  }
 }
 
-.icon-magnifier {
-  background-position-x: 20px;
-}
+/* Form */
+.form {
+  padding: 0;
 
+  input {
+    width: 230px;
+    height: 40px;
+  }
+
+  input[type="email"] {
+    border: 3px solid #e7e7e7;
+    border-right: none;
+
+    &::placeholder {
+
+      padding: 12px;
+      font-family: $robo-it;
+      font-size: 15px;
+      font-style: italic;
+      line-height: 24px;
+      color: #e7e7e7;
+    }
+  }
+
+  button {
+    width: 150px;
+    height: 40px;
+    border: none;
+    font-family: $monts-bold;
+    font-size: 14px;
+    text-transform: uppercase;
+    background: $marine;
+    color: #ffffff;
+
+    &:hover {
+      box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+      cursor: pointer;
+    }
+  }
+}
 
 /* NavBar */
 
@@ -110,9 +273,6 @@ nav{
     position: relative;
     top: 28px;
     margin-left: 2px;
-    font-family: $monts-bold;
-    font-size: 30px;
-    line-height: 30px;
   }
 
   .nav-bar {
@@ -187,20 +347,15 @@ header {
     margin-top: 229px - 68px;
     margin-bottom: 0;
     font-size: 72px;
-    font-family: $kaushan;
-    font-weight: normal;
     line-height: 72px;
-    text-align: center;
+    color: #ffffff;
   }
 
   .title {
     // position: relative;
     margin: 42px 0 72px - 18px;
     font-size: 150px;
-    font-family: $monts-bold;
     line-height: 140px;
-    text-align: center;    
-    text-transform: uppercase;
   }
 
   .tiny-hr {
@@ -234,6 +389,7 @@ header {
   .lower-nav {
     counter-reset: lower-nav;
     position: absolute;
+    width: calc((280px + 30px)*4);
     bottom: 0;
     
 
@@ -269,29 +425,10 @@ header {
   }
 }
 
-
 /* Info */
 
 .info{
-  padding: 91px 110px;
-
-  .subtitle {
-    margin: 0;
-    font-family: $kaushan;
-    font-size: 24px;
-    line-height: 22px;
-    text-align: center;
-    color: #333333;
-  }
-
-  .title {
-    margin: 23px 0 41px;
-    font-family: $monts-bold;
-    font-size: 30px;
-    line-height: 24px;
-    text-align: center;
-    text-transform: uppercase;
-  } 
+  padding: 91px 0 110px;
 
   .tiny-hr{
     background-color: $coral;
@@ -337,6 +474,201 @@ header {
       }
     }
   }
+}
+
+/* Counter */
+.counter {
+  height: 270px;
+  background-color: $marine;
+
+  &-col {
+    width: 240px;
+    padding: 88px 0;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    text-transform: uppercase;
+    color: #ffffff;
+
+    &:last-child {
+      border-right: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    h1 {
+      margin: 0 0 29px;
+      font-family: $monts-bold;
+      font-size: 72px;
+      line-height: 52px;
+      text-align: center;
+    }
+
+    p {
+      font-family: $monts-reg;
+      font-size: 14px;
+      text-align: center;
+      color: #ffffff;
+    }
+  }
+}
+
+/* Services */
+.services {
+  padding: 109px 0 65px;
+
+  hr {
+    color: #999999;
+  }
+
+  .tiny-hr{
+    background-color: $coral;
+  }
+
+  &-grid {
+    margin: 18px 0 40px;
+  }
+
+  .service {
+    width: 33%;
+    padding: 42px 0 38px;
+
+    .icon {
+      background-image: url('images/icons-nav.png');
+      width: 40px;
+      height: 35px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
+    &-icon {
+      width: 90px;
+      text-align: center;
+    }
+
+    &-content {
+      width: calc(100% - 90px);
+
+    }
+  }
+}
+
+/* Footer */
+
+footer {
+  position: relative;
+  bottom: 0;
+  background-color: #f8f8f8;
+
+  h3 {
+    margin-bottom: 40px;
+  }
+
+  .footer {
+    
+    &-content {
+      padding: 69px 0 69px 0;
+    }
+
+    &-social {
+      width: calc(100% - 420px - 270px);
+      padding-right: 30px;
+
+      p {
+        margin-bottom: 9px;
+        font-family: $robo-reg;
+        font-size: 15px;
+        line-height: 24px;
+        color: #999999;
+      }
+
+      .logo {
+        margin-bottom: 43px;
+        font-size: 46px;
+        line-height: 46px;
+        color: #cccccc;
+      }
+
+      .followers-counter {
+        border-bottom: 1px solid $gray;
+        font-family: $monts-reg;
+        font-size: 14px;
+        color: #333333;
+
+        span {
+          font-family: $monts-bold;
+          font-size: 18px;
+          line-height: 18px;
+        }
+      }
+
+      .social-icons {
+        font-family: $robo-it;
+        font-style: italic;
+        
+        p {
+          line-height: 0.9em;
+        }
+
+        .icon {
+          margin-right: 9px;
+          background-image: url('images/icons-social.png');
+          width: 18px;
+          height: 16px;
+
+          &:first-child {
+            margin-left: 25px;
+          }
+        }
+      }
+
+    }
+
+    &-blogs {
+      width: 420px;
 
 
+      .blog {
+        padding: 0 0 40px;
+        
+        &-img {
+          width: 119px;
+        }
+
+        &-content {
+          width: calc(100% - 119px);
+          padding: 0 60px 0 20px;
+        }
+
+        &-date {
+          font-size: 13px;
+          font-style: italic;
+          line-height: 24px;
+        }
+      }
+
+    }
+
+    &-insta {
+      width: 270px;
+
+      img {
+        width: 88px;
+        margin: 0 2px 2px 0;
+      }
+    }
+  }
+
+  .credits {
+    border-top: 1px solid $gray;
+    text-align: center;
+    padding: 24px 0;
+
+    p {
+      font-family: $monts-reg;;
+      font-size: 14px;
+      line-height: 14px;
+      color: #333333;
+    }
+
+    span {
+      color: $coral;
+    }
+  }
 }
