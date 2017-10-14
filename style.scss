@@ -1,4 +1,4 @@
-// ==== Colors ====
+// ==== Fonts ====
 
 $monts-bold: "Montserrat Bold", Arial, sans-serif;
 $monts-reg: "Montserrat Regular", Arial, sans-serif;
@@ -15,6 +15,9 @@ $blind-melon: #f6eac5;
 $coral: #f38181;
 $marine: #95e1d3;
 $gray: #e5e5e5;
+
+// ==== Measures ====
+$cont-w: 1200px;
 
 // ==== Mixins ====
 
@@ -63,7 +66,7 @@ $gray: #e5e5e5;
 }
 
 body {
-  min-width: 1200px;
+  min-width: $cont-w;
   margin: 0;
 }
 
@@ -89,7 +92,7 @@ p {
 .container {
   position: relative;
   height: 100%;
-  width: 1200px;
+  width: $cont-w;
   margin: 0 auto;
   // outline: 1px solid red;
 }
@@ -349,6 +352,10 @@ header {
   background-image: url("images/back.jpg");
   background-size: cover;
   color: #ffffff;
+
+  .container {
+    overflow-x: hidden;
+  }
 
   .subtitle {
     // position: relative;
@@ -668,21 +675,21 @@ footer {
 
     &-blogs {
       width: 420px;
-
+      padding-right: 30px;
 
       .blog {
-        padding: 0 0 28px;
+        margin: 0 0 28px;
 
         &:last-child {
           padding: 0;
         }
-        
-        a {
-          color: #333333;
-          text-decoration: none;
 
-          &:hover {
-            text-decoration: underline;
+        &:hover {
+          background: rgba($marine, 0.4);
+          cursor: pointer;
+
+          img {
+            opacity: 0.7;
           }
         }
 
@@ -695,15 +702,11 @@ footer {
         &-img {
           width: 119px;
           background: $marine;
-          
-          img {
-            @include image-hover;
-          }
         }
 
         &-content {
           width: calc(100% - 119px);
-          padding: 0 60px 0 20px;
+          padding: 0 30px 0 20px;
 
         }
 
@@ -711,15 +714,6 @@ footer {
           margin: 0;
           font-family: $robo-it;
           font-size: 13px;
-
-          a {
-            color: #999999;
-            text-decoration: none;
-
-            &:hover {
-              text-decoration: underline;
-            }
-          }
         }
       }
 
